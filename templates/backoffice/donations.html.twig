@@ -1,0 +1,14 @@
+{% extends 'baseB.html.twig' %}
+
+{% block title %}Dons{% endblock %}
+
+{% block header %}Gestion des dons{% endblock %}
+
+{% block body %}
+    <h2>Liste des dons</h2>
+    <ul>
+        {% for donation in donations %}
+            <li>{{ donation.amount }} € de {{ donation.donor }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

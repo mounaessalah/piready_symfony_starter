@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+           
+        <!-- Bootstrap CSS -->
+        <link href="{{asset('front/css/style.css')}}"  rel="stylesheet">
+        <link href="{{asset('front/css/bootstrap.min.css')}}"  rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="{{asset('front/css/tiny-slider.css')}}" rel="stylesheet">
+		<link href="{{asset('front/css/tiny-slider.css')}}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+        
+		<script>
+        // Ce script va faire disparaître les messages flash après 5 secondes
+        document.addEventListener("DOMContentLoaded", function() {
+            const flashMessages = document.querySelectorAll('.alert');
+            flashMessages.forEach(function(msg) {
+                setTimeout(function() {
+                    msg.style.transition = "opacity 0.5s ease";
+                    msg.style.opacity = "0"; // Rend le message invisible
+                    setTimeout(function() {
+                        msg.style.display = "none"; // Cache le message
+                    }, 500); // Après la transition, on cache le message
+                }, 5000); // Attendre 5 secondes avant de commencer la disparition
+            });
+        });
+    </script>
+
+        
+    </head>
+    <body>
+        <!-- Start Header/Navigation -->
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark " arial-label="Furni navigation bar">
+
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<a class="nav-link img-log" href="#"><img src="{{asset('front/images/logo1.png')}}"></a>
+				</a>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsFurni">
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+						<li class="nav-item {{ home_active | default('')}}">
+							<a class="nav-link" href="{{path('app_home')}}">Home</a>
+						</li>
+						
+						<li><a class="nav-link" {{ about_active | default('')}} href="{{path('app_about')}}">A propos</a></li>
+						<li><a class="nav-link" href="{{path('app_gallery')}}">Gallerie</a></li>
+                        <li><a class="nav-link" {{ contact_active | default('')}} href="{{path('app_atelier')}}">Atelier</a></li>
+						<li><a class="nav-link" {{ blog_active | default('')}} href="{{path('app_forum')}}">Forum</a></li>
+                        <li><a class="nav-link" {{ blog_active | default('')}} href="{{path('app_beneficiaires')}}">Nos Bénéficiaires</a></li>
+						<li><a class="nav-link" {{ contact_active | default('')}} href="{{path('app_dons')}}">Dons</a></li>
+                        
+					</ul>
+{# 
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						
+						
+                        {% if app.user%}
+                        <li><a class="nav-link" href="#"><img src="{{asset('front/images/user.svg')}}"></a></li>
+                        <li><a class="nav-link"  href="{{path('app_logout')}}">Me déconnecté</a></li>
+                        {% else %}
+                        <li><a class="nav-link"  href="{{path('app_login')}}">Connexion</a></li>
+                        {% endif %}
+                    </ul> #}
+				</div>
+			</div>	
+		</nav>
+		
+       
+
+        {% block body %}
+
+        <script src="{{asset('front/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="{{asset('front/js/tiny-slider.js')}}"></script>
+		<script src="{{asset('front/js/custom.js')}}"></script>
+      
+       {% endblock %}
+    </body>
+</html>

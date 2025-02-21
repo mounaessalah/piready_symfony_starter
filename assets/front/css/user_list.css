@@ -1,0 +1,113 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Panel Styling */
+.panel {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.panel-heading {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.table-responsive {
+    padding: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: #007bff;
+    color: white;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Role Label Styling */
+.label {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.label-info {
+    background: #17a2b8;
+    color: white;
+}
+
+/* Buttons Styling */
+.btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-danger {
+    background: #dc3545;
+    border: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #a71d2a;
+}
+
+/* Delete Confirmation Modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background: #dc3545;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+}
+
+.modal-footer {
+    text-align: center;
+}
